@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>For {{her_name}}</title>
+
+<style>
+body{
+background:#ffe6f2;
+text-align:center;
+font-family:Arial;
+overflow:hidden;
+}
+
+h1{
+margin-top:120px;
+color:#ff4d88;
+}
+
+button{
+padding:15px 30px;
+font-size:20px;
+border:none;
+border-radius:12px;
+cursor:pointer;
+}
+
+#yesBtn{
+background:#ff66a3;
+color:white;
+}
+
+#noBtn{
+background:grey;
+position:absolute;
+}
+
+.heart{
+position:fixed;
+font-size:20px;
+animation:float 4s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh);}
+100%{transform:translateY(-10vh);}
+}
+</style>
+</head>
+
+<body>
+
+<h1>{{her_name}}, Will You Be Mine Forever? 💖</h1>
+<h3>- {{your_name}}</h3>
+
+<a href="{% url 'yes' %}">
+<button id="yesBtn">YES ❤️</button>
+</a>
+
+<button id="noBtn">NO 😢</button>
+
+<audio autoplay loop>
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const noBtn=document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover",()=>{
+noBtn.style.left=Math.random()*window.innerWidth+"px";
+noBtn.style.top=Math.random()*window.innerHeight+"px";
+});
+
+function heart(){
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="💗";
+h.style.left=Math.random()*100+"vw";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),4000);
+}
+setInterval(heart,300);
+</script>
+
+</body>
+</html>
