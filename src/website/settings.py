@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-55^qfn7w3nr$u$&qbf(i$xd9)0o($r8_*+#9s8ntx*gcmc!#(@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['prp-3.onrender.com',]
 # Django Crispy setting
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
